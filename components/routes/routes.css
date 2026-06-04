@@ -1,0 +1,258 @@
+/* Routes Component Styles */
+
+/* 1. Filter Bar */
+.routes-filter-bar {
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.filter-inputs {
+    display: flex;
+    gap: 1.5rem;
+    flex-grow: 1;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.filter-group label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-dark-muted);
+    text-transform: uppercase;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    outline: none;
+    color: var(--color-dark);
+    background-color: #FAFAFA;
+    transition: var(--transition-fast);
+}
+
+.filter-group select:focus {
+    border-color: var(--color-primary);
+    background-color: var(--color-light);
+}
+
+.btn-reset-filters {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    height: 48px; /* Match inputs height */
+}
+
+/* 2. Routes Grid */
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    transition: var(--transition-normal);
+}
+
+.route-card {
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-normal);
+}
+
+/* Card Header */
+.route-header {
+    background-color: #FAFAFA;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px dashed var(--color-border); /* Ticket ticket style cut */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Rounded ticket notches on the sides */
+.route-header::before,
+.route-header::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-bg-light);
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    z-index: 10;
+}
+
+.route-header::before {
+    left: -9px;
+}
+
+.route-header::after {
+    right: -9px;
+}
+
+.route-badge {
+    background-color: rgba(54, 169, 45, 0.1);
+    color: var(--color-primary);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+}
+
+.route-info-tag {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--color-secondary); /* Accent Orange */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Card Body */
+.route-body {
+    padding: 2rem 1.5rem;
+    flex-grow: 1;
+}
+
+.route-cities {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+}
+
+.route-cities .city {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-dark);
+    text-align: center;
+    flex: 1;
+}
+
+.route-arrow {
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.route-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid var(--color-bg-light);
+    padding-top: 1.25rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-dark-muted);
+    font-weight: 500;
+}
+
+.detail-item svg {
+    color: var(--color-primary);
+}
+
+/* Card Footer */
+.route-card .route-footer {
+    padding: 1.5rem;
+    background-color: #FAFAFA;
+    border-top: 1px solid var(--color-border);
+}
+
+.btn-whatsapp-route {
+    width: 100%;
+}
+
+/* Hover effect */
+.route-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(54, 169, 45, 0.2);
+}
+
+.route-card:hover .btn-whatsapp-route {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+/* Hide Utility */
+.route-card.hidden {
+    display: none;
+}
+
+/* Empty State */
+.routes-empty-state {
+    display: none; /* Controlled via JS */
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-md);
+    border: 1px dashed var(--color-border);
+}
+
+.routes-empty-state svg {
+    color: var(--color-dark-muted);
+    margin-bottom: 1.5rem;
+}
+
+.routes-empty-state h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.routes-empty-state p {
+    color: var(--color-dark-muted);
+    margin-bottom: 0;
+}
+
+/* Responsive grid adjustments */
+@media (max-width: 1024px) {
+    .routes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .routes-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.25rem;
+        padding: 1.5rem;
+    }
+    
+    .filter-inputs {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .routes-grid {
+        grid-template-columns: 1fr;
+    }
+}

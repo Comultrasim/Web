@@ -1,0 +1,214 @@
+/* About Component Styles */
+
+/* Mission and Vision Grid */
+.about-mv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.about-card {
+    background-color: #1A1A1A; /* Deep dark theme for the cards, matches screenshots */
+    color: var(--color-light);
+    border-radius: var(--border-radius-lg);
+    padding: 3.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Color details for Mision vs Vision cards */
+.mision-card {
+    border-top: 5px solid var(--color-primary); /* Green accent */
+}
+
+.vision-card {
+    border-top: 5px solid var(--color-secondary); /* Orange accent */
+}
+
+/* Card Badge */
+.about-card-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mision-card .about-card-badge {
+    color: var(--color-tertiary);
+}
+
+.vision-card .about-card-badge {
+    color: var(--color-secondary);
+}
+
+.about-card-title {
+    font-size: 1.8rem;
+    color: var(--color-light);
+    margin-bottom: 2rem;
+}
+
+.about-card-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Elegant Typography Drop Cap */
+.drop-cap {
+    float: left;
+    font-family: var(--font-heading);
+    font-size: 4.8rem;
+    font-weight: 800;
+    line-height: 0.8;
+    margin-right: 0.65rem;
+    margin-top: 0.15rem;
+}
+
+.drop-cap.accent-primary {
+    color: var(--color-primary);
+}
+
+.drop-cap.accent-secondary {
+    color: var(--color-secondary);
+}
+
+.about-card-text {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.about-card-text.paragraph-2 {
+    margin-top: 1rem;
+    text-indent: 0;
+}
+
+/* Decorative SVG drawings in the background */
+.card-decor-svg {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    opacity: 0.08;
+    color: var(--color-light);
+    transition: var(--transition-normal);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Hover effect on cards */
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.mision-card:hover {
+    box-shadow: 0 15px 30px rgba(54, 169, 45, 0.15);
+}
+
+.vision-card:hover {
+    box-shadow: 0 15px 30px rgba(245, 106, 0, 0.15);
+}
+
+.about-card:hover .card-decor-svg {
+    opacity: 0.22;
+    transform: scale(1.1);
+}
+
+.mision-card:hover .card-decor-svg {
+    color: var(--color-tertiary);
+}
+
+.vision-card:hover .card-decor-svg {
+    color: var(--color-secondary);
+}
+
+/* Values Section */
+.about-values-section {
+    border-top: 1px solid var(--color-border);
+    padding-top: 4rem;
+}
+
+.values-title {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.value-item {
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-md);
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.value-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(54, 169, 45, 0.08);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+    transition: var(--transition-fast);
+}
+
+.value-item h5 {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-dark);
+}
+
+.value-item p {
+    font-size: 0.9rem;
+    color: var(--color-dark-muted);
+    margin-bottom: 0;
+}
+
+/* Value Item Hover */
+.value-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(54, 169, 45, 0.15);
+}
+
+.value-item:hover .value-icon {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .about-mv-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-card {
+        padding: 3rem 2rem;
+    }
+    
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}

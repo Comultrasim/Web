@@ -1,0 +1,132 @@
+/* Services Component Styles */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-md);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-normal);
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Icon Wrapper Styling */
+.service-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--border-radius-md);
+    background-color: rgba(54, 169, 45, 0.08); /* Primary Green tint */
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.75rem;
+    transition: var(--transition-normal);
+}
+
+.service-icon-wrapper svg {
+    transition: var(--transition-normal);
+}
+
+.service-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--color-dark);
+}
+
+.service-card-text {
+    font-size: 0.95rem;
+    color: var(--color-dark-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes content down equally */
+}
+
+/* Feature List */
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.service-features li {
+    font-size: 0.85rem;
+    color: var(--color-dark-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.service-features li svg {
+    color: var(--color-primary); /* Green checkmarks */
+    flex-shrink: 0;
+}
+
+/* Card CTA link */
+.service-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-secondary); /* Accent Orange */
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: auto; /* Push link to the bottom */
+}
+
+.service-card-link svg {
+    transition: var(--transition-fast);
+}
+
+/* Hover Interactions */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(54, 169, 45, 0.2);
+}
+
+.service-card:hover .service-icon-wrapper {
+    background-color: var(--color-secondary); /* Switch to Orange */
+    color: var(--color-light);
+    transform: rotateY(360deg);
+}
+
+.service-card:hover .service-card-link {
+    color: var(--color-primary); /* Switch link color to primary green on card hover */
+}
+
+.service-card:hover .service-card-link svg {
+    transform: translateX(5px);
+}
+
+/* Responsive Grid layouts */
+@media (max-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+}

@@ -1,0 +1,307 @@
+/* Contact & WhatsApp Panel Component Styles */
+
+.contact-split-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 3.5rem;
+    align-items: start;
+}
+
+/* 1. Left Info Panel */
+.contact-info-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-panel-title {
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    margin-bottom: 0.5rem;
+}
+
+.info-panel-desc {
+    font-size: 0.95rem;
+    color: var(--color-dark-muted);
+    margin-bottom: 2rem;
+}
+
+.info-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.info-card-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.info-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--border-radius-sm);
+    background-color: rgba(54, 169, 45, 0.08);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-card-body h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-dark);
+}
+
+.info-card-body p {
+    font-size: 0.9rem;
+    color: var(--color-dark-muted);
+    margin-bottom: 0;
+}
+
+.info-card-body a:hover {
+    color: var(--color-secondary);
+}
+
+/* Simulated Map Card pointing to Simijaca */
+.simulated-map-card {
+    height: 250px;
+    border-radius: var(--border-radius-md);
+    background-color: #E2E8F0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.map-marker {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marker-icon {
+    color: var(--color-accent); /* Wine red marker */
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.marker-pulse {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(122, 11, 11, 0.25);
+    border-radius: 50%;
+    animation: markerPulse 1.8s infinite ease-out;
+    z-index: 1;
+}
+
+@keyframes markerPulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+.map-label {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius-sm);
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    z-index: 2;
+}
+
+/* Roads layout lines */
+.map-grid-roads {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.road {
+    position: absolute;
+    background-color: #F8FAFC;
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+}
+
+.road.horizontal {
+    height: 24px;
+    width: 100%;
+}
+
+.road.vertical {
+    width: 24px;
+    height: 100%;
+}
+
+.road-1 { top: 40px; }
+.road-2 { bottom: 60px; }
+.road-3 { left: 80px; }
+.road-4 { right: 120px; }
+
+.map-green-area {
+    position: absolute;
+    background-color: rgba(92, 203, 83, 0.15); /* Tertiary Green tint */
+    border-radius: 6px;
+}
+
+.area-1 {
+    width: 70px;
+    height: 60px;
+    top: 80px;
+    right: 30px;
+}
+
+.area-2 {
+    width: 100px;
+    height: 80px;
+    bottom: 90px;
+    left: 120px;
+}
+
+/* 2. Right WhatsApp Panel */
+.contact-whatsapp-panel {
+    background-color: var(--color-light);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 3.5rem 3rem;
+    border: 1px solid var(--color-border);
+    border-top: 5px solid var(--color-secondary); /* Accent Orange top */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.whatsapp-card-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    background-color: rgba(245, 106, 0, 0.08);
+    color: var(--color-secondary);
+}
+
+.whatsapp-logo-wrapper {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: rgba(54, 169, 45, 0.08); /* Primary Green tint */
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgba(54, 169, 45, 0.1);
+}
+
+.whatsapp-main-icon {
+    transition: var(--transition-normal);
+}
+
+.whatsapp-panel-title {
+    font-size: 1.8rem;
+    color: var(--color-dark);
+    margin-bottom: 0.75rem;
+}
+
+.whatsapp-panel-desc {
+    font-size: 0.95rem;
+    color: var(--color-dark-muted);
+    line-height: 1.6;
+    max-width: 480px;
+    margin-bottom: 2rem;
+}
+
+.whatsapp-phone-box {
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    padding: 1.25rem 2.5rem;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    width: 100%;
+    max-width: 350px;
+}
+
+.phone-label {
+    font-size: 0.75rem;
+    color: var(--color-dark-muted);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.phone-number {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-secondary); /* Orange highlight */
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.btn-whatsapp-chat {
+    width: 100%;
+    max-width: 350px;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1rem 2rem;
+}
+
+.whatsapp-availability {
+    font-size: 0.75rem;
+    color: var(--color-dark-muted);
+    margin-top: 1.25rem;
+    font-weight: 500;
+}
+
+/* Hover effects */
+.contact-whatsapp-panel:hover .whatsapp-logo-wrapper {
+    transform: scale(1.05);
+}
+
+/* Responsive grid breaks */
+@media (max-width: 1024px) {
+    .contact-split-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-whatsapp-panel {
+        padding: 3rem 2rem;
+    }
+}

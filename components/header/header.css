@@ -1,0 +1,280 @@
+/* Header Component Styles */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition-normal);
+}
+
+/* Header States on Scroll */
+header.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+header.scrolled .header-topbar {
+    margin-top: -36px; /* Smoothly hide topbar on scroll */
+    opacity: 0;
+    pointer-events: none;
+}
+
+header.scrolled .header-mainbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.65rem 0;
+}
+
+/* 1. Top Bar Styling - Using the Wine Red (#7A0B0B) accent */
+.header-topbar {
+    background-color: var(--color-accent);
+    color: rgba(255, 255, 255, 0.95);
+    padding: 0.45rem 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: var(--transition-normal);
+    position: relative;
+    z-index: 1001;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-info {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.topbar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.topbar-item svg {
+    color: var(--color-secondary); /* Highlight icons with orange */
+}
+
+.topbar-item a:hover {
+    color: var(--color-secondary);
+}
+
+.topbar-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.topbar-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.topbar-link:hover {
+    color: var(--color-secondary);
+}
+
+.topbar-separator {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* 2. Main Bar Styling */
+.header-mainbar {
+    background-color: var(--color-light);
+    padding: 0.95rem 0;
+    transition: var(--transition-normal);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.mainbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo Section */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition-normal);
+}
+
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--color-primary); /* Primary Green */
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+
+.logo-title span {
+    color: var(--color-secondary); /* Accent Orange */
+}
+
+.logo-tagline {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-dark-muted);
+}
+
+/* Main Navigation Menu */
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2.25rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-dark-muted);
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-secondary);
+    transition: var(--transition-normal);
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: var(--color-primary);
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-header-cta {
+    padding: 0.65rem 1.35rem;
+    font-size: 0.85rem;
+}
+
+/* Mobile Toggle Hamburger */
+.mobile-toggle-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1005;
+}
+
+.mobile-toggle-btn .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-dark);
+    border-radius: 2px;
+    transition: var(--transition-normal);
+}
+
+/* Hamburger Animations when open */
+.mobile-toggle-btn.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-toggle-btn.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle-btn.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .nav-menu ul {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .hide-mobile {
+        display: none;
+    }
+    
+    .btn-header-cta {
+        display: none; /* Hide ticket booking in mobile header header-actions, will place in hero */
+    }
+    
+    .mobile-toggle-btn {
+        display: flex;
+    }
+    
+    /* Mobile Menu Drawer */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background-color: var(--color-light);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+        padding: 6rem 2rem 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        transition: var(--transition-normal);
+        z-index: 1004;
+    }
+    
+    .nav-menu.open {
+        right: 0;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        width: 100%;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+        width: 100%;
+        display: block;
+    }
+}

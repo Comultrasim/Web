@@ -1,0 +1,286 @@
+/* Import modern professional Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Define Design Tokens and CSS Variables */
+:root {
+    /* Main Palette */
+    --color-primary: #36A92D;      /* Verde Principal */
+    --color-primary-rgb: 54, 169, 45;
+    --color-secondary: #F56A00;    /* Naranja Principal (Texto/Acciones) */
+    --color-secondary-rgb: 245, 106, 0;
+    --color-tertiary: #5CCB53;     /* Verde Claro Apoyo */
+    --color-tertiary-rgb: 92, 203, 83;
+    --color-accent: #7A0B0B;       /* Rojo Vino Extremos */
+    --color-accent-rgb: 122, 11, 11;
+    
+    /* Neutrals */
+    --color-dark: #111111;         /* Neutro Oscuro */
+    --color-dark-muted: #444444;   /* Dark neutral intermediate */
+    --color-light: #FFFFFF;        /* Neutro Claro */
+    --color-bg-light: #F5F5F5;     /* Fondo Claro */
+    --color-border: #E5E5E5;
+    
+    /* Typography */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    
+    /* Layout Details */
+    --header-height: 80px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --border-radius-xl: 32px;
+    
+    /* Shadow Systems */
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-glow: 0 0 20px rgba(54, 169, 45, 0.2);
+    --shadow-glow-secondary: 0 0 20px rgba(245, 106, 0, 0.2);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Max Widths */
+    --max-width: 1280px;
+}
+
+/* CSS Reset and Global Setup */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-light);
+    color: var(--color-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-bg-light);
+}
+::-webkit-scrollbar-thumb {
+    background: #CCCCCC;
+    border-radius: 5px;
+    border: 2px solid var(--color-bg-light);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* Typography styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-dark);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--color-dark-muted);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Common Layout Components & Utilities */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+}
+
+.section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 0;
+    }
+}
+
+.section-bg-alt {
+    background-color: var(--color-light);
+}
+
+.section-accent-decor {
+    border-left: 6px solid var(--color-accent);
+    border-right: 6px solid var(--color-accent);
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+}
+
+.section-badge {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background-color: rgba(54, 169, 45, 0.1);
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--color-dark);
+    margin-bottom: 1.25rem;
+}
+
+.section-title span {
+    color: var(--color-secondary);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-dark-muted);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* Global Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2rem;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    border: none;
+    outline: none;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-tertiary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(92, 203, 83, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+    box-shadow: var(--shadow-glow-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: #E05E00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(245, 106, 0, 0.35);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    transform: translateY(-2px);
+}
+
+.btn-dark {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.btn-dark:hover {
+    background-color: var(--color-dark-muted);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-slide-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Helpers */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
