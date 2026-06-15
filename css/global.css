@@ -284,3 +284,15 @@ img {
 .mb-2 { margin-bottom: 1rem; }
 .mb-3 { margin-bottom: 1.5rem; }
 .mb-4 { margin-bottom: 2rem; }
+
+/* Subpage Layout Fix (Fixed Header offset) */
+.subpage-main {
+    padding-top: calc(var(--header-height) + 48px); /* Account for header-mainbar + header-topbar */
+    min-height: calc(100vh - var(--header-height) - 48px);
+}
+
+@media (max-width: 900px) {
+    .subpage-main {
+        padding-top: calc(var(--header-height) + 10px);
+    }
+}

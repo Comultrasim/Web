@@ -1,7 +1,7 @@
 /**
  * Comultrasim Web Application Main Core
  * Handles dynamic component loading (HTML & CSS) for multi-page shells,
- * page routing headers highlighting, and informative routes filtering.
+ * page routing headers highlighting, and informative routes/gallery filtering.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'services', url: './components/services/services.html', css: './components/services/services.css' },
         { id: 'about', url: './components/about/about.html', css: './components/about/about.css' },
         { id: 'routes', url: './components/routes/routes.html', css: './components/routes/routes.css', init: initRoutes },
+        { id: 'personal', url: './components/personal/personal.html', css: './components/personal/personal.css', init: initPersonal },
         { id: 'contact', url: './components/contact/contact.html', css: './components/contact/contact.css' },
         { id: 'footer', url: './components/footer/footer.html', css: './components/footer/footer.css' }
     ];
@@ -170,4 +171,33 @@ function filterRoutes(origin, destination) {
             emptyState.style.display = 'none';
         }
     }
+}
+
+/**
+ * 3. Personal & Fleet Component Initializer
+ * Filters gallery photos dynamically on user category clicks.
+ */
+function initPersonal() {
+    const filterButtons = document.querySelectorAll('.gallery-filters .filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-grid .gallery-item');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons and add to this one
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            // Show/Hide items based on filter choice
+            galleryItems.forEach(item => {
+                const itemVehicle = item.getAttribute('data-vehicle');
+                if (filterValue === 'all' || itemVehicle === filterValue) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    });
 }
