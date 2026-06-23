@@ -166,6 +166,24 @@ footer {
     text-transform: uppercase;
 }
 
+/* Vigilado Badge */
+.footer-vigilado {
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vigilado-logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0.9);
+    transition: var(--transition-fast);
+}
+
+.vigilado-logo:hover {
+    filter: brightness(1.1);
+}
+
 /* Responsive breakdowns */
 @media (max-width: 1024px) {
     .footer-grid {

@@ -1,0 +1,112 @@
+#integracion {
+    background-color: var(--color-light);
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.carousel-viewport {
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+    min-width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: var(--color-bg-light);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--color-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    z-index: 10;
+}
+
+.carousel-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev {
+    left: -22px;
+}
+
+.carousel-next {
+    right: -22px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-border);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    padding: 0;
+}
+
+.carousel-dot.active {
+    background-color: var(--color-primary);
+    transform: scale(1.3);
+    box-shadow: var(--shadow-glow);
+}
+
+.carousel-dot:hover {
+    background-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+    .carousel-prev {
+        left: 8px;
+    }
+    .carousel-next {
+        right: 8px;
+    }
+    .carousel-slide {
+        aspect-ratio: 4 / 3;
+    }
+}

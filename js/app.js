@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'services', url: './components/services/services.html', css: './components/services/services.css' },
         { id: 'about', url: './components/about/about.html', css: './components/about/about.css' },
         { id: 'routes', url: './components/routes/routes.html', css: './components/routes/routes.css', init: initRoutes },
+        { id: 'integracion', url: './components/integracion/integracion.html', css: './components/integracion/integracion.css', init: initIntegracion },
         { id: 'personal', url: './components/personal/personal.html', css: './components/personal/personal.css', init: initPersonal },
         { id: 'contact', url: './components/contact/contact.html', css: './components/contact/contact.css' },
         { id: 'footer', url: './components/footer/footer.html', css: './components/footer/footer.css' }
@@ -174,7 +175,72 @@ function filterRoutes(origin, destination) {
 }
 
 /**
- * 3. Personal & Fleet Component Initializer
+ * 3. Integración Carousel Initializer
+ * Auto-play carousel with manual controls.
+ */
+function initIntegracion() {
+    const track = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const dotsContainer = document.getElementById('carousel-dots');
+    if (!track) return;
+
+    const slides = track.querySelectorAll('.carousel-slide');
+    const total = slides.length;
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    // Create dots
+    for (let i = 0; i < total; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+    }
+
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    function goTo(index) {
+        currentIndex = index;
+        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+        dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+    }
+
+    function next() {
+        goTo((currentIndex + 1) % total);
+    }
+
+    function prev() {
+        goTo((currentIndex - 1 + total) % total);
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(next, 4000);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+    }
+
+    const wrapper = document.querySelector('.carousel-wrapper');
+    if (wrapper) {
+        wrapper.addEventListener('mouseenter', stopAutoPlay);
+        wrapper.addEventListener('mouseleave', startAutoPlay);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => { prev(); stopAutoPlay(); });
+    if (nextBtn) nextBtn.addEventListener('click', () => { next(); stopAutoPlay(); });
+
+    startAutoPlay();
+}
+
+/**
+ * 4. Personal & Fleet Component Initializer
  * Filters gallery photos dynamically on user category clicks.
  */
 function initPersonal() {
