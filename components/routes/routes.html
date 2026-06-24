@@ -3,7 +3,7 @@
         <span class="section-badge">Rutas Disponibles</span>
         <h2 class="section-title">Nuestros <span>Recorridos</span> Regionales</h2>
         <p class="section-subtitle">
-            Conectamos las principales veredas y cabeceras municipales de la provincia. Consulta los tiempos aproximados y frecuencias de nuestras busetas.
+            Conectamos los principales municipios de la provincia. Consulta los tiempos aproximados de cada recorrido.
         </p>
     </div>
 
@@ -16,8 +16,9 @@
                     <option value="todos">Todos los orígenes</option>
                     <option value="Chiquinquira">Chiquinquirá</option>
                     <option value="Simijaca">Simijaca</option>
-                    <option value="Coper">Coper</option>
                     <option value="Susa">Susa</option>
+                    <option value="Buenavista">Buenavista</option>
+                    <option value="SanMiguelDeSema">San Miguel de Sema</option>
                 </select>
             </div>
             
@@ -26,9 +27,10 @@
                 <select id="filter-destination">
                     <option value="todos">Todos los destinos</option>
                     <option value="Simijaca">Simijaca</option>
-                    <option value="Coper">Coper</option>
+                    <option value="Chiquinquira">Chiquinquirá</option>
                     <option value="Susa">Susa</option>
-                    <option value="BellaVista">Bella Vista</option>
+                    <option value="Buenavista">Buenavista</option>
+                    <option value="SanMiguelDeSema">San Miguel de Sema</option>
                 </select>
             </div>
         </div>
@@ -37,7 +39,7 @@
 
     <!-- Routes Grid -->
     <div class="routes-grid" id="routes-grid">
-        <!-- Route 1: Chiquinquira - Simijaca -->
+        <!-- Route 1: Chiquinquira -> Simijaca -->
         <div class="route-card animate-slide-up" data-origin="Chiquinquira" data-destination="Simijaca">
             <div class="route-header">
                 <span class="route-badge">Frecuente</span>
@@ -54,12 +56,9 @@
                 <div class="route-details">
                     <div class="detail-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
-                        <span>Duración: ~30 min</span>
+                        <span>~30 min</span>
                     </div>
-                    <div class="detail-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <span>Frecuencia: Cada 30 min</span>
-                    </div>
+
                 </div>
             </div>
             <div class="route-footer">
@@ -70,41 +69,8 @@
             </div>
         </div>
 
-        <!-- Route 2: Chiquinquira - Coper -->
-        <div class="route-card animate-slide-up" data-origin="Chiquinquira" data-destination="Coper" style="animation-delay: 0.05s;">
-            <div class="route-header">
-                <span class="route-badge">Diario</span>
-                <span class="route-info-tag">Regional</span>
-            </div>
-            <div class="route-body">
-                <div class="route-cities">
-                    <span class="city">Chiquinquirá</span>
-                    <span class="route-arrow">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
-                    </span>
-                    <span class="city">Coper</span>
-                </div>
-                <div class="route-details">
-                    <div class="detail-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
-                        <span>Duración: ~1.5 hrs</span>
-                    </div>
-                    <div class="detail-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <span>Frecuencia: Cada 2 hrs</span>
-                    </div>
-                </div>
-            </div>
-            <div class="route-footer">
-                <a href="https://wa.me/573204896514" class="btn btn-outline btn-whatsapp-route" target="_blank">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                    Consultar por WhatsApp
-                </a>
-            </div>
-        </div>
-
-        <!-- Route 3: Simijaca - Susa -->
-        <div class="route-card animate-slide-up" data-origin="Simijaca" data-destination="Susa" style="animation-delay: 0.1s;">
+        <!-- Route 2: Simijaca -> Chiquinquira -->
+        <div class="route-card animate-slide-up" data-origin="Simijaca" data-destination="Chiquinquira" style="animation-delay: 0.05s;">
             <div class="route-header">
                 <span class="route-badge">Frecuente</span>
                 <span class="route-info-tag">Regional</span>
@@ -115,17 +81,14 @@
                     <span class="route-arrow">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
                     </span>
-                    <span class="city">Susa</span>
+                    <span class="city">Chiquinquirá</span>
                 </div>
                 <div class="route-details">
                     <div class="detail-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
-                        <span>Duración: ~20 min</span>
+                        <span>~30 min</span>
                     </div>
-                    <div class="detail-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <span>Frecuencia: Cada hora</span>
-                    </div>
+
                 </div>
             </div>
             <div class="route-footer">
@@ -136,8 +99,144 @@
             </div>
         </div>
 
-        <!-- Route 4: Chiquinquira - Susa -->
-        <div class="route-card animate-slide-up" data-origin="Chiquinquira" data-destination="Susa" style="animation-delay: 0.15s;">
+        <!-- Route 3: Chiquinquira -> Simijaca -> Buenavista -->
+        <div class="route-card animate-slide-up" data-origin="Chiquinquira" data-destination="Buenavista" style="animation-delay: 0.1s;">
+            <div class="route-header">
+                <span class="route-badge">Diario</span>
+                <span class="route-info-tag">Veredal</span>
+            </div>
+            <div class="route-body">
+                <div class="route-cities route-cities-triple">
+                    <span class="city">Chiquinquirá</span>
+                    <span class="route-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+                    </span>
+                    <span class="city city-mid">Simijaca</span>
+                    <span class="route-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+                    </span>
+                    <span class="city">Buenavista</span>
+                </div>
+                <div class="route-details">
+                    <div class="detail-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
+                        <span>Chiquinquirá→Simijaca 30 min<br>Simijaca→Buenavista 45 min</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="route-footer">
+                <a href="https://wa.me/573204896514" class="btn btn-outline btn-whatsapp-route" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Route 4: Buenavista -> Simijaca -> Chiquinquira -->
+        <div class="route-card animate-slide-up" data-origin="Buenavista" data-destination="Chiquinquira" style="animation-delay: 0.15s;">
+            <div class="route-header">
+                <span class="route-badge">Diario</span>
+                <span class="route-info-tag">Veredal</span>
+            </div>
+            <div class="route-body">
+                <div class="route-cities route-cities-triple">
+                    <span class="city">Buenavista</span>
+                    <span class="route-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+                    </span>
+                    <span class="city city-mid">Simijaca</span>
+                    <span class="route-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+                    </span>
+                    <span class="city">Chiquinquirá</span>
+                </div>
+                <div class="route-details">
+                    <div class="detail-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
+                        <span>Buenavista→Simijaca 45 min<br>Simijaca→Chiquinquirá 30 min</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="route-footer">
+                <a href="https://wa.me/573204896514" class="btn btn-outline btn-whatsapp-route" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Route 5: Chiquinquira -> Simijaca -> San Miguel de Sema -->
+        <div class="route-card animate-slide-up" data-origin="Chiquinquira" data-destination="SanMiguelDeSema" style="animation-delay: 0.2s;">
+            <div class="route-header">
+                <span class="route-badge">Diario</span>
+                <span class="route-info-tag">Veredal</span>
+            </div>
+            <div class="route-body">
+                <div class="route-cities route-cities-triple">
+                    <span class="city">Chiquinquirá</span>
+                    <span class="route-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+                    </span>
+                    <span class="city city-mid">Simijaca</span>
+                    <span class="route-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+                    </span>
+                    <span class="city">San Miguel de Sema</span>
+                </div>
+                <div class="route-details">
+                    <div class="detail-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
+                        <span>Chiquinquirá→Simijaca 30 min<br>Simijaca→San Miguel 45 min</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="route-footer">
+                <a href="https://wa.me/573204896514" class="btn btn-outline btn-whatsapp-route" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Route 6: San Miguel de Sema -> Simijaca -> Chiquinquira -->
+        <div class="route-card animate-slide-up" data-origin="SanMiguelDeSema" data-destination="Chiquinquira" style="animation-delay: 0.25s;">
+            <div class="route-header">
+                <span class="route-badge">Diario</span>
+                <span class="route-info-tag">Veredal</span>
+            </div>
+            <div class="route-body">
+                <div class="route-cities route-cities-triple">
+                    <span class="city">San Miguel de Sema</span>
+                    <span class="route-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+                    </span>
+                    <span class="city city-mid">Simijaca</span>
+                    <span class="route-arrow">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
+                    </span>
+                    <span class="city">Chiquinquirá</span>
+                </div>
+                <div class="route-details">
+                    <div class="detail-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
+                        <span>San Miguel→Simijaca 45 min<br>Simijaca→Chiquinquirá 30 min</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="route-footer">
+                <a href="https://wa.me/573204896514" class="btn btn-outline btn-whatsapp-route" target="_blank">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                    Consultar por WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Route 7: Chiquinquira -> Susa -->
+        <div class="route-card animate-slide-up" data-origin="Chiquinquira" data-destination="Susa" style="animation-delay: 0.3s;">
             <div class="route-header">
                 <span class="route-badge">Frecuente</span>
                 <span class="route-info-tag">Regional</span>
@@ -153,12 +252,9 @@
                 <div class="route-details">
                     <div class="detail-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
-                        <span>Duración: ~40 min</span>
+                        <span>~45 min</span>
                     </div>
-                    <div class="detail-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <span>Frecuencia: Cada 45 min</span>
-                    </div>
+
                 </div>
             </div>
             <div class="route-footer">
@@ -169,29 +265,26 @@
             </div>
         </div>
 
-        <!-- Route 5: Simijaca - Bella Vista -->
-        <div class="route-card animate-slide-up" data-origin="Simijaca" data-destination="BellaVista" style="animation-delay: 0.2s;">
+        <!-- Route 8: Susa -> Chiquinquira -->
+        <div class="route-card animate-slide-up" data-origin="Susa" data-destination="Chiquinquira" style="animation-delay: 0.35s;">
             <div class="route-header">
-                <span class="route-badge">Veredal</span>
-                <span class="route-info-tag">Local</span>
+                <span class="route-badge">Frecuente</span>
+                <span class="route-info-tag">Regional</span>
             </div>
             <div class="route-body">
                 <div class="route-cities">
-                    <span class="city">Simijaca</span>
+                    <span class="city">Susa</span>
                     <span class="route-arrow">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
                     </span>
-                    <span class="city">Bella Vista</span>
+                    <span class="city">Chiquinquirá</span>
                 </div>
                 <div class="route-details">
                     <div class="detail-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
-                        <span>Duración: ~1 hr</span>
+                        <span>~45 min</span>
                     </div>
-                    <div class="detail-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <span>Frecuencia: Cada 3 hrs</span>
-                    </div>
+
                 </div>
             </div>
             <div class="route-footer">
@@ -201,38 +294,19 @@
                 </a>
             </div>
         </div>
+    </div>
 
-        <!-- Route 6: Coper - Bella Vista -->
-        <div class="route-card animate-slide-up" data-origin="Coper" data-destination="BellaVista" style="animation-delay: 0.25s;">
-            <div class="route-header">
-                <span class="route-badge">Diario</span>
-                <span class="route-info-tag">Local</span>
-            </div>
-            <div class="route-body">
-                <div class="route-cities">
-                    <span class="city">Coper</span>
-                    <span class="route-arrow">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
-                    </span>
-                    <span class="city">Bella Vista</span>
-                </div>
-                <div class="route-details">
-                    <div class="detail-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12,6 12,12 16,14"></polyline></svg>
-                        <span>Duración: ~1.2 hrs</span>
-                    </div>
-                    <div class="detail-item">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <span>Frecuencia: 2 salidas/día</span>
-                    </div>
-                </div>
-            </div>
-            <div class="route-footer">
-                <a href="https://wa.me/573204896514" class="btn btn-outline btn-whatsapp-route" target="_blank">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                    Consultar por WhatsApp
-                </a>
-            </div>
+    <!-- Tarifas Section -->
+    <div class="tarifas-section">
+        <div class="section-header">
+            <span class="section-badge">Tarifas</span>
+            <h2 class="section-title">Nuestras <span>Tarifas</span></h2>
+            <p class="section-subtitle">
+                Consulta los precios de todos nuestros recorridos.
+            </p>
+        </div>
+        <div class="tarifas-image-wrapper">
+            <img src="./media/tarifas.jpeg" alt="Tarifas de rutas Comultrasim" class="tarifas-image">
         </div>
     </div>
     

@@ -151,6 +151,25 @@
     flex: 1;
 }
 
+.route-cities-triple {
+    gap: 0.25rem;
+}
+
+.route-cities-triple .city {
+    font-size: 0.95rem;
+}
+
+.route-cities-triple .city-mid {
+    font-size: 0.8rem;
+    color: var(--color-dark-muted);
+    font-weight: 600;
+}
+
+.route-cities-triple .route-arrow svg {
+    width: 14px;
+    height: 14px;
+}
+
 .route-arrow {
     color: var(--color-primary);
     display: flex;
@@ -255,4 +274,24 @@
     .routes-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Tarifas Section */
+.tarifas-section {
+    margin-top: 5rem;
+}
+
+.tarifas-image-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border);
+}
+
+.tarifas-image {
+    display: block;
+    width: 100%;
+    height: auto;
 }

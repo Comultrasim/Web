@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'routes', url: './components/routes/routes.html', css: './components/routes/routes.css', init: initRoutes },
         { id: 'integracion', url: './components/integracion/integracion.html', css: './components/integracion/integracion.css', init: initIntegracion },
         { id: 'personal', url: './components/personal/personal.html', css: './components/personal/personal.css', init: initPersonal },
-        { id: 'contact', url: './components/contact/contact.html', css: './components/contact/contact.css' },
+        { id: 'contact', url: './components/contact/contact.html', css: './components/contact/contact.css', init: initContact },
         { id: 'footer', url: './components/footer/footer.html', css: './components/footer/footer.css' }
     ];
 
@@ -266,4 +266,29 @@ function initPersonal() {
             });
         });
     });
+}
+
+/**
+ * 5. Contact Component Initializer
+ * Initializes Leaflet map with office location.
+ */
+function initContact() {
+    const mapContainer = document.getElementById('contact-map');
+    if (!mapContainer || typeof L === 'undefined') return;
+
+    const map = L.map('contact-map', {
+        center: [5.50346172876857, -73.85107306683902],
+        zoom: 16,
+        scrollWheelZoom: false
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19
+    }).addTo(map);
+
+    L.marker([5.50346172876857, -73.85107306683902])
+        .addTo(map)
+        .bindPopup('<b>Comultrasim</b><br>Simijaca, Cl 9 # 6-32')
+        .openPopup();
 }

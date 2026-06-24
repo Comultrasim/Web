@@ -66,123 +66,17 @@
     color: var(--color-secondary);
 }
 
-/* Simulated Map Card pointing to Simijaca */
-.simulated-map-card {
-    height: 250px;
+/* Real Map Container */
+.contact-map-container {
+    height: 280px;
     border-radius: var(--border-radius-md);
-    background-color: #E2E8F0;
-    position: relative;
     overflow: hidden;
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-sm);
 }
 
-.map-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.map-marker {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.marker-icon {
-    color: var(--color-accent); /* Wine red marker */
-    z-index: 2;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
-
-.marker-pulse {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(122, 11, 11, 0.25);
-    border-radius: 50%;
-    animation: markerPulse 1.8s infinite ease-out;
-    z-index: 1;
-}
-
-@keyframes markerPulse {
-    0% {
-        transform: scale(0.5);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1.8);
-        opacity: 0;
-    }
-}
-
-.map-label {
-    background-color: var(--color-dark);
-    color: var(--color-light);
-    padding: 0.4rem 0.8rem;
-    border-radius: var(--border-radius-sm);
-    font-size: 0.75rem;
-    font-weight: 700;
-    margin-top: 0.5rem;
-    box-shadow: var(--shadow-sm);
-    z-index: 2;
-}
-
-/* Roads layout lines */
-.map-grid-roads {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.road {
-    position: absolute;
-    background-color: #F8FAFC;
-    box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
-}
-
-.road.horizontal {
-    height: 24px;
-    width: 100%;
-}
-
-.road.vertical {
-    width: 24px;
-    height: 100%;
-}
-
-.road-1 { top: 40px; }
-.road-2 { bottom: 60px; }
-.road-3 { left: 80px; }
-.road-4 { right: 120px; }
-
-.map-green-area {
-    position: absolute;
-    background-color: rgba(92, 203, 83, 0.15); /* Tertiary Green tint */
-    border-radius: 6px;
-}
-
-.area-1 {
-    width: 70px;
-    height: 60px;
-    top: 80px;
-    right: 30px;
-}
-
-.area-2 {
-    width: 100px;
-    height: 80px;
-    bottom: 90px;
-    left: 120px;
+.contact-map-container .leaflet-control-attribution {
+    font-size: 10px;
 }
 
 /* 2. Right WhatsApp Panel */
