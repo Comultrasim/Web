@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load only the components whose placeholder divs exist on the current page
     loadPageComponents(components);
+
+    // Accessibility zoom widget: fixed and present on every page
+    initAccessibility();
 });
 
 /**
@@ -291,4 +294,65 @@ function initContact() {
         .addTo(map)
         .bindPopup('<b>Comultrasim</b><br>Simijaca, Cl 9 # 6-32')
         .openPopup();
+}
+
+/**
+ * 6. Accessibility Zoom Widget Initializer
+ * Loads the fixed font-size control stack that remains visible while scrolling.
+ */
+function initAccessibility() {
+    const cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = './components/accessibility/accessibility.css';
+    document.head.appendChild(cssLink);
+
+    fetch('./components/accessibility/accessibility.html')
+        .then(resp => {
+            if (!resp.ok) throw new Error(`Fallo al cargar html para accessibility: ${resp.statusText}`);
+            return resp.text();
+        })
+        .then(html => {
+            document.body.insertAdjacentHTML('beforeend', html);
+            setUpAccessibilityZoom();
+        })
+        .catch(error => console.error('Error loading accessibility widget:', error));
+}
+
+/**
+ * Wires up the font-size controls and persists the user preference.
+ */
+function setUpAccessibilityZoom() {
+    const BASE = 16;
+    const MIN = 12;
+    const MAX = 24;
+    const STEP = 2;
+
+    const decreaseBtn = document.getElementById('acc-decrease');
+    const increaseBtn = document.getElementById('acc-increase');
+    const valueBtn = document.getElementById('acc-value');
+    if (!decreaseBtn || !increaseBtn || !valueBtn) return;
+
+    let currentSize = parseInt(localStorage.getItem('acc-font-size'), 10);
+    if (isNaN(currentSize)) currentSize = BASE;
+    currentSize = Math.min(MAX, Math.max(MIN, currentSize));
+
+    const applySize = () => {
+        document.documentElement.style.fontSize = currentSize + 'px';
+        valueBtn.textContent = Math.round((currentSize / BASE) * 100) + '%';
+        localStorage.setItem('acc-font-size', String(currentSize));
+    };
+
+    const updateBy = (delta) => {
+        currentSize = Math.min(MAX, Math.max(MIN, currentSize + delta));
+        applySize();
+    };
+
+    decreaseBtn.addEventListener('click', () => updateBy(-STEP));
+    increaseBtn.addEventListener('click', () => updateBy(STEP));
+    valueBtn.addEventListener('click', () => {
+        currentSize = BASE;
+        applySize();
+    });
+
+    applySize();
 }

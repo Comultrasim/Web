@@ -1,0 +1,86 @@
+/* Accessibility Zoom Widget Styles */
+
+.accessibility-widget {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(17, 17, 17, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-right: none;
+    border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+    box-shadow: var(--shadow-lg);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.accessibility-widget .acc-btn {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1;
+    transition: var(--transition-fast);
+}
+
+.accessibility-widget .acc-btn:hover {
+    transform: scale(1.08);
+}
+
+.accessibility-widget .acc-btn:focus-visible {
+    box-shadow: 0 0 0 3px var(--color-secondary);
+}
+
+.acc-btn-increase,
+.acc-btn-decrease {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+.acc-btn-increase:hover,
+.acc-btn-decrease:hover {
+    background-color: var(--color-tertiary);
+}
+
+.acc-btn-value {
+    background-color: transparent;
+    color: var(--color-light);
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.acc-btn-value:hover {
+    color: var(--color-secondary);
+}
+
+/* Responsive: horizontal control at bottom-right on small screens */
+@media (max-width: 600px) {
+    .accessibility-widget {
+        top: auto;
+        bottom: 1rem;
+        right: 0;
+        transform: none;
+        flex-direction: row;
+        padding: 0.35rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-right: none;
+        border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+    }
+
+    .accessibility-widget .acc-btn {
+        width: 38px;
+        height: 38px;
+    }
+}
